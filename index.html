@@ -1,0 +1,3041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nouman Sheikh Shop | Premium Sports &amp; Games Gear</title>
+  <meta name="description" content="Nouman Sheikh Shop — Bold dark-themed sports and games gear with instant WhatsApp ordering." />
+  <meta property="og:title" content="Nouman Sheikh Shop | Ready To Rumble" />
+  <meta property="og:description" content="Shop rugby helmets, shoes, shoulder pads, jerseys, match balls, and training gloves via WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Oswald (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome 6 CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & RESET
+       ========================================================================== */
+    :root {
+      --bg-base: #0a0a0a;
+      --bg-pure: #000000;
+      --bg-card-dark: #1a1a1a;
+      --bg-card-border: #2a2a2a;
+      --bg-light: #f2f2f2;
+      --bg-white: #ffffff;
+      --text-white: #ffffff;
+      --text-muted: #a3a3a3;
+      --text-dark: #0a0a0a;
+      --text-dark-muted: #525252;
+      --wa-green: #25D366;
+      --wa-green-dark: #159947;
+
+      --font-display: 'Oswald', Impact, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --max-w: 1320px;
+      --transition-smooth: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.24s ease, box-shadow 0.26s ease, background-color 0.2s ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-white);
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-base);
+      color: var(--text-white);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--text-white);
+      outline-offset: 2px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding-left: clamp(16px, 4vw, 40px);
+      padding-right: clamp(16px, 4vw, 40px);
+    }
+
+    .section-pad {
+      padding-top: clamp(56px, 7.5vw, 100px);
+      padding-bottom: clamp(56px, 7.5vw, 100px);
+    }
+
+    .display-heading {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.015em;
+      line-height: 0.96;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ==========================================================================
+       1B. TOP MARQUEE ANNOUNCEMENT BANNER
+       ========================================================================== */
+    .marquee-bar {
+      width: 100%;
+      background-color: #FF9900;
+      color: #000000;
+      overflow: hidden;
+      border-bottom: 2px solid #000000;
+      position: relative;
+      z-index: 905;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 24s linear infinite;
+      will-change: transform;
+    }
+
+    @media (hover: hover) {
+      .marquee-bar:hover .marquee-track {
+        animation-play-state: paused;
+      }
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      padding: 9px 28px;
+      font-family: var(--font-display);
+      font-size: clamp(0.85rem, 1.3vw, 0.98rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ==========================================================================
+       2. NAVBAR (STICKY TOP)
+       ========================================================================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      width: 100%;
+      background-color: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .navbar.is-scrolled {
+      background-color: rgba(0, 0, 0, 0.98);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65);
+    }
+
+    .navbar-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .brand-main {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 700;
+      color: var(--text-white);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 40px);
+    }
+
+    .nav-link {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: var(--text-white);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.22s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.is-active {
+      color: var(--text-white);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.is-active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .btn-cart-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      padding: 9px 18px;
+      border-radius: 9999px;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-cart-pill:hover {
+      background-color: #d4d4d4;
+      transform: translateY(-2px);
+    }
+
+    .cart-count-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 6px;
+      border-radius: 9999px;
+      background-color: var(--bg-pure);
+      color: var(--text-white);
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .mobile-nav-drawer {
+      display: none;
+      background-color: var(--bg-pure);
+      border-bottom: 1px solid var(--bg-card-border);
+      padding: 14px clamp(16px, 4vw, 40px) 22px;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-nav-drawer.is-open {
+      display: flex;
+    }
+
+    .mobile-nav-link {
+      padding: 10px 4px;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: var(--bg-pure);
+      padding: clamp(48px, 8vw, 96px) 0;
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: contrast(1.08) brightness(0.75);
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 48% 38%, rgba(10, 10, 10, 0.18) 0%, rgba(10, 10, 10, 0.8) 72%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, rgba(10, 10, 10, 0.25) 45%, #0a0a0a 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-top-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(3.5rem, 11vw, 9rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--text-white);
+      text-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-headline .word-line {
+      display: block;
+    }
+
+    .hero-headline .word-second-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: clamp(14px, 2.5vw, 32px);
+    }
+
+    .hero-outline-word {
+      color: transparent;
+      -webkit-text-stroke: 2.5px var(--text-white);
+      text-shadow: none;
+    }
+
+    .hero-side-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 22px;
+      background: rgba(10, 10, 10, 0.62);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .hero-description {
+      font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+      color: #e5e5e5;
+      line-height: 1.6;
+    }
+
+    .btn-white-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 13px 30px;
+      border-radius: 10px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-white-primary:hover {
+      background-color: #d4d4d4;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(255, 255, 255, 0.18);
+    }
+
+    /* ==========================================================================
+       4. SHARED BUTTONS (WHATSAPP CTA)
+       ========================================================================== */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      background-color: var(--wa-green);
+      color: var(--text-white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      transition: var(--transition-smooth);
+      margin-top: auto;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--wa-green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-whatsapp i {
+      font-size: 1.05rem;
+    }
+
+    /* ==========================================================================
+       5. TESTIMONIALS ("PEOPLE LOVE US")
+       ========================================================================== */
+    .section-header-split {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: clamp(30px, 5vw, 50px);
+      flex-wrap: wrap;
+    }
+
+    .section-title-lg {
+      font-size: clamp(2.35rem, 5vw, 4.1rem);
+      color: var(--text-white);
+    }
+
+    .section-subcopy {
+      max-width: 380px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .testimonial-card {
+      background-color: var(--bg-card-dark);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      transition: var(--transition-smooth);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
+    }
+
+    .testimonial-date {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .testimonial-quote {
+      font-size: 0.96rem;
+      color: #f5f5f5;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.16);
+      flex-shrink: 0;
+      background: #262626;
+    }
+
+    .author-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .author-role {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       6. CATEGORY GRID ("MEET PREMIUM GEAR FOR 2025")
+       ========================================================================== */
+    .gear-hero-split {
+      display: grid;
+      grid-template-columns: 180px 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 42px;
+    }
+
+    .kicker-muted {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      align-self: flex-start;
+      padding-top: 8px;
+    }
+
+    .gear-copy-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .gear-copy-col p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 390px;
+      line-height: 1.65;
+    }
+
+    .gear-action-photo-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: #141414;
+      border: 1px solid var(--bg-card-border);
+    }
+
+    .gear-action-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.35s ease;
+    }
+
+    .gear-action-photo-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    .category-grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .cat-white-card {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: var(--transition-smooth);
+    }
+
+    .cat-white-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+    }
+
+    .cat-card-img {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #f5f5f5;
+    }
+
+    .cat-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .cat-white-card:hover .cat-card-img img {
+      transform: scale(1.05);
+    }
+
+    .cat-card-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .cat-card-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: var(--text-dark);
+    }
+
+    .cat-card-price {
+      font-weight: 800;
+      font-size: 0.94rem;
+      color: var(--text-dark);
+    }
+
+    .see-all-row {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ==========================================================================
+       7. FEATURE BANNER ("THE ULTIMATE COMPETITION")
+       ========================================================================== */
+    .competition-card {
+      background: linear-gradient(145deg, #f7f7f7 0%, #e6e6e6 100%);
+      color: var(--text-dark);
+      border-radius: 26px;
+      padding: clamp(28px, 5vw, 56px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .competition-bg-year {
+      position: absolute;
+      left: 6%;
+      top: 32%;
+      font-family: var(--font-display);
+      font-size: clamp(7rem, 19vw, 15rem);
+      font-weight: 700;
+      line-height: 0.8;
+      color: rgba(0, 0, 0, 0.06);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .competition-top-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 180px 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: clamp(28px, 4vw, 44px);
+    }
+
+    .comp-kicker {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-dark-muted);
+      line-height: 1.4;
+    }
+
+    .comp-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.3rem, 4.8vw, 3.9rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--text-dark);
+    }
+
+    .comp-editorial {
+      font-size: 0.88rem;
+      color: var(--text-dark-muted);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .competition-media-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .comp-tackle-card {
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 290px;
+      background-color: #161616;
+    }
+
+    .comp-tackle-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .comp-tackle-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .comp-worldcup-box {
+      background-color: #0e0e0e;
+      color: var(--text-white);
+      border-radius: 18px;
+      min-height: 290px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 28px;
+    }
+
+    .comp-worldcup-img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 68%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.88;
+      z-index: 1;
+    }
+
+    .comp-worldcup-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(95deg, #0a0a0a 35%, rgba(10, 10, 10, 0.25) 100%);
+      z-index: 2;
+    }
+
+    .comp-worldcup-overlay-tag {
+      position: relative;
+      z-index: 3;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      padding: 16px 22px;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      display: inline-block;
+    }
+
+    .comp-worldcup-overlay-tag span {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.6vw, 3.1rem);
+      font-weight: 700;
+      line-height: 0.92;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       8. BEST SELLING GEAR SHOWCASE (HARDCODED PRODUCTS ARRAY)
+       ========================================================================== */
+    .bestseller-header {
+      display: grid;
+      grid-template-columns: 180px 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .store-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter-pill-btn {
+      padding: 8px 16px;
+      border-radius: 9999px;
+      border: 1px solid var(--bg-card-border);
+      background-color: var(--bg-card-dark);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .filter-pill-btn:hover {
+      border-color: rgba(255, 255, 255, 0.45);
+      color: var(--text-white);
+    }
+
+    .filter-pill-btn.is-active {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      border-color: var(--bg-white);
+    }
+
+    .bestseller-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .gear-product-card {
+      background-color: var(--bg-card-dark);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: var(--transition-smooth);
+    }
+
+    .gear-product-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.65);
+    }
+
+    .gear-white-frame {
+      background-color: var(--bg-white);
+      border-radius: 12px;
+      padding: 12px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+    }
+
+    .gear-white-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .gear-product-card:hover .gear-white-frame img {
+      transform: scale(1.05);
+    }
+
+    .gear-cat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .gear-meta-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .gear-name {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1.3;
+    }
+
+    .gear-price {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--text-white);
+      flex-shrink: 0;
+    }
+
+    .card-actions-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .btn-save-cart-mini {
+      padding: 11px 13px;
+      border-radius: 10px;
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-save-cart-mini:hover {
+      background-color: #d4d4d4;
+    }
+
+    /* ==========================================================================
+       8B. CLEAN CATALOGUE VIEW (ONLY PRODUCTS + FILTER TABS)
+       ========================================================================== */
+    .catalogue-view {
+      display: none;
+      min-height: calc(100vh - 180px);
+      padding-top: clamp(32px, 5vw, 56px);
+      padding-bottom: clamp(56px, 7vw, 96px);
+      background-color: var(--bg-base);
+    }
+
+    .catalogue-view.is-active {
+      display: block;
+    }
+
+    .storefront-main.is-hidden {
+      display: none;
+    }
+
+    .catalogue-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 1024px) {
+      .catalogue-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .catalogue-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==========================================================================
+       9. FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-pure);
+      border-top: 1px solid var(--bg-card-border);
+      padding: 44px 0 34px;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--text-white);
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .admin-login-link {
+      font-size: 0.76rem;
+      color: #6b7280;
+      transition: color 0.2s ease;
+    }
+
+    .admin-login-link:hover {
+      color: var(--text-white);
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       9B. ADMIN LOGIN MODAL & FULL-SCREEN ADMIN DASHBOARD (z-index: 9999)
+       ========================================================================== */
+    .admin-login-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .admin-login-modal.is-open {
+      display: flex;
+    }
+
+    .admin-login-card {
+      width: min(420px, 100%);
+      background-color: var(--bg-card-dark);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: 0 24px 56px rgba(0, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .admin-login-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .admin-login-head h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .login-error-msg {
+      display: none;
+      font-size: 0.82rem;
+      color: #f87171;
+      font-weight: 600;
+    }
+
+    .login-error-msg.is-visible {
+      display: block;
+    }
+
+    .admin-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: var(--bg-base);
+      color: var(--text-white);
+      display: none;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .admin-overlay.is-open {
+      display: flex;
+    }
+
+    .admin-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: var(--bg-pure);
+      border-bottom: 1px solid var(--bg-card-border);
+      padding: 18px clamp(16px, 4vw, 40px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .admin-header-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .admin-body {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px clamp(16px, 4vw, 40px) 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .admin-tabs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--bg-card-border);
+      padding-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .admin-tab-btn {
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background-color: var(--bg-card-dark);
+      color: var(--text-muted);
+      border: 1px solid var(--bg-card-border);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .admin-tab-btn:hover {
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .admin-tab-btn.is-active {
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      border-color: var(--bg-white);
+    }
+
+    .admin-panel-view {
+      display: none;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .admin-panel-view.is-active {
+      display: flex;
+    }
+
+    .admin-card {
+      background-color: var(--bg-card-dark);
+      border: 1px solid var(--bg-card-border);
+      border-radius: var(--radius-md);
+      padding: clamp(18px, 3vw, 28px);
+    }
+
+    .admin-card-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 16px;
+    }
+
+    .admin-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .admin-form-row-cat {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 14px;
+      align-items: end;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field.is-full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .dark-input,
+    .dark-select {
+      width: 100%;
+      padding: 11px 14px;
+      background-color: #0e0e0e;
+      color: var(--text-white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+
+    .dark-input:focus,
+    .dark-select:focus {
+      outline: none;
+      border-color: var(--text-white);
+    }
+
+    .tree-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tree-parent-block {
+      background-color: #111111;
+      border: 1px solid var(--bg-card-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+    }
+
+    .tree-node-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 4px;
+    }
+
+    .tree-node-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .tree-children-list {
+      margin-top: 8px;
+      margin-left: 16px;
+      padding-left: 16px;
+      border-left: 1px dashed rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .tree-child-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.03);
+      font-size: 0.88rem;
+      color: #e5e5e5;
+    }
+
+    .btn-delete-sm {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: #1f1f1f;
+      color: #ff6b6b;
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.18s ease;
+    }
+
+    .btn-delete-sm:hover {
+      background-color: #dc2626;
+      color: var(--text-white);
+      border-color: #dc2626;
+    }
+
+    .admin-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    .admin-table th {
+      text-align: left;
+      padding: 12px 14px;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--bg-card-border);
+    }
+
+    .admin-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+
+    .admin-prod-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: var(--bg-white);
+    }
+
+    @media (max-width: 767px) {
+      .admin-form-grid,
+      .admin-form-row-cat {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==========================================================================
+       10. CART DRAWER & TOAST
+       ========================================================================== */
+    .cart-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      z-index: 950;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .cart-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(410px, 94vw);
+      background-color: #111111;
+      color: var(--text-white);
+      border-left: 1px solid var(--bg-card-border);
+      z-index: 960;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .cart-drawer-head {
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--bg-card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cart-drawer-head h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .cart-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #1f1f1f;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cart-close-btn:hover {
+      background: var(--bg-white);
+      color: var(--text-dark);
+    }
+
+    .cart-items-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 48px 16px;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .cart-item-row {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--bg-card-border);
+      align-items: center;
+    }
+
+    .cart-item-thumb {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      background: var(--bg-white);
+      overflow: hidden;
+    }
+
+    .cart-item-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+
+    .qty-box {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--bg-card-border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .qty-box button {
+      width: 26px;
+      height: 26px;
+      background: #1f1f1f;
+      color: var(--text-white);
+      font-weight: 700;
+    }
+
+    .qty-box span {
+      padding: 0 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .cart-remove-link {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+
+    .cart-drawer-foot {
+      padding: 20px 22px;
+      border-top: 1px solid var(--bg-card-border);
+      background-color: var(--bg-pure);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-subtotal-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .toast-banner {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      padding: 12px 22px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+      transition: var(--transition-smooth);
+    }
+
+    .toast-banner.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .img-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #222222 0%, #111111 100%);
+      color: #ffffff;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .img-fallback i {
+      font-size: 1.75rem;
+      color: #a3a3a3;
+    }
+
+    /* ==========================================================================
+       11. RESPONSIVENESS (DESKTOP -> TABLET -> MOBILE)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-top-grid,
+      .gear-hero-split,
+      .competition-top-grid,
+      .bestseller-header {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .hero-side-block {
+        max-width: 480px;
+      }
+
+      .category-grid-2x2,
+      .bestseller-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+      }
+
+      .testimonials-grid,
+      .competition-media-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid-2x2,
+      .bestseller-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: 76vh;
+      }
+
+      .hero-headline {
+        font-size: clamp(2.8rem, 15vw, 4.4rem);
+      }
+
+      .hero-outline-word {
+        -webkit-text-stroke: 1.5px var(--text-white);
+      }
+
+      .comp-tackle-card,
+      .comp-worldcup-box {
+        min-height: 220px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-grid-2x2,
+      .bestseller-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       0. TOP SCROLLING MARQUEE BANNER
+       ======================================================================== -->
+  <div class="marquee-bar" role="region" aria-label="Store announcements">
+    <div class="marquee-track">
+      <span class="marquee-item">🔥 WELCOME TO NOUMAN SHEIKH SHOP - PREMIUM SPORTS &amp; GAMES GEAR 🔥 FREE SHIPPING ON ALL ORDERS ABOVE R.s50 🔥</span>
+      <span class="marquee-item" aria-hidden="true">🔥 WELCOME TO NOUMAN SHEIKH SHOP - PREMIUM SPORTS &amp; GAMES GEAR 🔥 FREE SHIPPING ON ALL ORDERS ABOVE R.s50 🔥</span>
+      <span class="marquee-item" aria-hidden="true">🔥 WELCOME TO NOUMAN SHEIKH SHOP - PREMIUM SPORTS &amp; GAMES GEAR 🔥 FREE SHIPPING ON ALL ORDERS ABOVE R.s50 🔥</span>
+      <span class="marquee-item" aria-hidden="true">🔥 WELCOME TO NOUMAN SHEIKH SHOP - PREMIUM SPORTS &amp; GAMES GEAR 🔥 FREE SHIPPING ON ALL ORDERS ABOVE R.s50 🔥</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       1. NAVBAR
+       ======================================================================== -->
+  <header class="navbar" id="siteNavbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="brand-logo" data-nav-view="home" aria-label="Nouman Sheikh Shop Home">
+        <span class="brand-main">Nouman Sheikh</span>
+        <span class="brand-sub">Shop</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home" class="nav-link is-active" data-nav-view="home">HOME</a>
+        <a href="#catalogue" class="nav-link" data-nav-view="catalogue">CATALOGUE</a>
+        <a href="#deals" class="nav-link" data-nav-view="home">DEALS</a>
+        <a href="#store" class="nav-link" data-nav-view="home">STORE</a>
+        <a href="#about" class="nav-link" data-nav-view="home">ABOUT</a>
+      </nav>
+
+      <div class="nav-right">
+        <button type="button" class="btn-cart-pill" id="cartOpenBtn" aria-label="Open shopping cart">
+          <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+          <span>CART</span>
+          <span class="cart-count-badge tabular-nums" id="cartBadge">0</span>
+        </button>
+
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          id="mobileNavToggle"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile navigation">
+      <a href="#home" class="mobile-nav-link" data-nav-view="home">HOME</a>
+      <a href="#catalogue" class="mobile-nav-link" data-nav-view="catalogue">CATALOGUE</a>
+      <a href="#deals" class="mobile-nav-link" data-nav-view="home">DEALS</a>
+      <a href="#store" class="mobile-nav-link" data-nav-view="home">STORE</a>
+      <a href="#about" class="mobile-nav-link" data-nav-view="home">ABOUT</a>
+    </nav>
+  </header>
+
+  <!-- ========================================================================
+       CLEAN CATALOGUE VIEW (PRODUCTS ONLY + CATEGORY FILTER TABS)
+       ======================================================================== -->
+  <section class="catalogue-view" id="catalogueView" aria-label="Product Catalogue">
+    <div class="container">
+      <div class="store-filter-bar" id="catalogueFilterBar" role="tablist" aria-label="Filter catalogue by category"></div>
+      <div class="catalogue-grid" id="catalogueGrid"></div>
+    </div>
+  </section>
+
+  <main class="storefront-main" id="storefrontMain">
+    <!-- ======================================================================
+         2. HERO SECTION
+         ====================================================================== -->
+    <section class="hero" id="home" aria-label="Hero showcase">
+      <img
+        src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=1800&q=80"
+        alt="Sports athlete charging under stadium floodlights"
+        class="hero-bg-img"
+        onerror="this.style.display='none'"
+      />
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-top-grid">
+          <h1 class="hero-headline">
+            <span class="word-line">READY</span>
+            <span class="word-second-row">
+              <span class="hero-outline-word">TO</span>
+              <span>RUMBLE</span>
+            </span>
+          </h1>
+
+          <div class="hero-side-block">
+            <p class="hero-description">
+              Your ultimate destination for top-quality sports and games gear. Discover a wide selection of equipment and apparel — order directly via WhatsApp.
+            </p>
+            <a href="#deals" class="btn-white-primary">
+              <span>Shop Now</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. TESTIMONIALS ("PEOPLE LOVE US")
+         ====================================================================== -->
+    <section class="section-pad" id="about" aria-label="Customer testimonials">
+      <div class="container">
+        <div class="section-header-split">
+          <h2 class="display-heading section-title-lg">PEOPLE LOVE US</h2>
+          <p class="section-subcopy">
+            Discover why players and coaches trust Nouman Sheikh Shop for pro-grade sports equipment and instant WhatsApp ordering.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <span class="testimonial-date">20th September 2023</span>
+            <p class="testimonial-quote">
+              "Shopping at Nouman Sheikh Shop has been a game-changer. Ordering via WhatsApp was effortless and my rugby helmet arrived the very next day."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80"
+                alt="Bailey Sheppard"
+                class="author-avatar"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+              <div>
+                <div class="author-name">Bailey Sheppard</div>
+                <div class="author-role">Rugby Player</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <span class="testimonial-date">30th October 2023</span>
+            <p class="testimonial-quote">
+              "I outfitted our entire squad with boots, shoulder pads, and match balls. Quality is rock solid and customer support on WhatsApp is instant."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80"
+                alt="Marcus Vance"
+                class="author-avatar"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+              <div>
+                <div class="author-name">Marcus Vance</div>
+                <div class="author-role">Head Coach</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <span class="testimonial-date">1st December 2023</span>
+            <p class="testimonial-quote">
+              "Stumbled upon Nouman Sheikh Shop while hunting for firm-ground rugby cleats. Perfect grip, sleek look, and unbeatable prices."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&q=80"
+                alt="Liam Hayes"
+                class="author-avatar"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+              <div>
+                <div class="author-name">Liam Hayes</div>
+                <div class="author-role">Sports Enthusiast</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. CATEGORY GRID ("MEET PREMIUM GEAR FOR 2025")
+         ====================================================================== -->
+    <section class="section-pad" id="store" aria-label="Meet premium gear for 2025">
+      <div class="container">
+        <div class="gear-hero-split">
+          <div class="kicker-muted">Go and shop<br />what you need</div>
+
+          <div class="gear-copy-col">
+            <h2 class="display-heading section-title-lg">
+              MEET PREMIUM<br />GEAR FOR 2025
+            </h2>
+            <p>
+              Power up your game with our Tournament Gear — superior equipment and apparel across protective headgear, jerseys, match balls, and pro grip gloves.
+            </p>
+          </div>
+
+          <div class="gear-action-photo-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1544698310-74ea9d1c8258?auto=format&fit=crop&w=900&q=80"
+              alt="Athlete sprinting with ball in tournament kit"
+              loading="lazy"
+              onerror="fallbackImg(this, 'fa-person-running', 'Tournament Gear')"
+            />
+          </div>
+        </div>
+
+        <!-- 2x2 / 4-card White Product Category Grid (Jersey, Helmet, Ball, Gloves + WhatsApp Button) -->
+        <div class="category-grid-2x2" id="categoryGrid"></div>
+
+        <div class="see-all-row">
+          <a href="#deals" class="btn-white-primary">
+            <span>See All</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. FEATURE BANNER ("THE ULTIMATE COMPETITION")
+         ====================================================================== -->
+    <section class="section-pad" aria-label="The Ultimate Competition Feature Banner">
+      <div class="container">
+        <div class="competition-card">
+          <div class="competition-bg-year" aria-hidden="true">2023</div>
+
+          <div class="competition-top-grid">
+            <div class="comp-kicker">Upcoming<br />Sports event</div>
+            <h2 class="comp-heading">THE ULTIMATE<br />COMPETITION</h2>
+            <div class="comp-editorial">
+              <p>
+                The pinnacle of international Rugby &amp; field sports, where elite national squads battle across knockout tournaments for championship glory.
+              </p>
+              <p>
+                Gear up with Nouman Sheikh Shop’s pro-approved helmets, cleats, shoulder pads, and match balls built for contact.
+              </p>
+            </div>
+          </div>
+
+          <div class="competition-media-grid">
+            <div class="comp-tackle-card">
+              <img
+                src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80"
+                alt="Rugby players battling in a fierce tackle"
+                loading="lazy"
+                onerror="fallbackImg(this, 'fa-trophy', 'Championship Tackle')"
+              />
+            </div>
+
+            <div class="comp-worldcup-box">
+              <img
+                src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?auto=format&fit=crop&w=800&q=80"
+                alt="World Cup Rugby action player"
+                class="comp-worldcup-img"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+              <div class="comp-worldcup-scrim"></div>
+              <div class="comp-worldcup-overlay-tag">
+                <span>WORLD</span>
+                <span>CUP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. PRODUCTS SHOWCASE ("OUR BEST SELLING GEAR")
+         ====================================================================== -->
+    <section class="section-pad" id="deals" aria-label="Our Best Selling Gear">
+      <div class="container">
+        <div class="bestseller-header">
+          <div class="kicker-muted">Go and shop<br />what you need</div>
+          <h2 class="display-heading section-title-lg">OUR BEST<br />SELLING GEAR</h2>
+          <p class="section-subcopy">
+            Click the WhatsApp button on any item to chat directly with Nouman Sheikh (+92 332 1460134) with pre-filled product details.
+          </p>
+        </div>
+
+        <div class="store-filter-bar" id="storeFilterBar" role="tablist" aria-label="Filter products by category"></div>
+        <div class="bestseller-grid" id="bestSellingGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       7. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a href="#home" class="brand-logo" data-nav-view="home">
+        <span class="brand-main">Nouman Sheikh</span>
+        <span class="brand-sub">Shop</span>
+      </a>
+
+      <div class="footer-links">
+        <a href="#home" data-nav-view="home">Home</a>
+        <a href="#catalogue" data-nav-view="catalogue">Catalogue</a>
+        <a href="#deals" data-nav-view="home">Deals</a>
+        <a href="#store" data-nav-view="home">Store</a>
+        <a href="#about" data-nav-view="home">About</a>
+        <a href="https://wa.me/923321460134?text=Hi%20Nouman%20Sheikh%2C%20I%20would%20like%20to%20inquire%20about%20sports%20gear." target="_blank" rel="noopener noreferrer" style="color:#25D366;font-weight:600;">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Support
+        </a>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-copy">&copy; 2025 Nouman Sheikh Shop. All rights reserved.</p>
+        <button type="button" class="admin-login-link" id="openAdminLoginBtn">Admin Login</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       7B. ADMIN LOGIN MODAL (Password: 356948127)
+       ======================================================================== -->
+  <div
+    class="admin-login-modal"
+    id="adminLoginModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="adminLoginHeading"
+    aria-hidden="true"
+  >
+    <div class="admin-login-card">
+      <div class="admin-login-head">
+        <h3 id="adminLoginHeading">Admin Login</h3>
+        <button type="button" class="cart-close-btn" id="closeLoginModalBtn" aria-label="Close login modal">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <form id="adminLoginForm" style="display:flex;flex-direction:column;gap:14px;">
+        <div class="form-field">
+          <label for="adminPasswordInput" class="form-label">Admin Password</label>
+          <input
+            type="password"
+            id="adminPasswordInput"
+            class="dark-input"
+            placeholder="Enter admin password"
+            required
+          />
+        </div>
+        <p class="login-error-msg" id="loginErrorMsg">Incorrect password. Please try again.</p>
+        <button type="submit" class="btn-white-primary" style="width:100%;">
+          <i class="fa-solid fa-lock-open" aria-hidden="true"></i>
+          <span>Unlock Dashboard</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       7C. FULL-SCREEN ADMIN DASHBOARD OVERLAY (z-index: 9999)
+       ======================================================================== -->
+  <section
+    class="admin-overlay"
+    id="adminOverlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Nouman Sheikh - Admin Dashboard"
+    aria-hidden="true"
+  >
+    <header class="admin-header">
+      <h2 class="admin-header-title">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+        <span>Nouman Sheikh - Admin Dashboard</span>
+      </h2>
+      <button type="button" class="btn-white-primary" id="closeAdminOverlayBtn">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span>Back to Store</span>
+      </button>
+    </header>
+
+    <div class="admin-body">
+      <div class="admin-tabs" role="tablist">
+        <button type="button" class="admin-tab-btn is-active" data-admin-tab="categories" role="tab" aria-selected="true">
+          <i class="fa-solid fa-folder-tree" aria-hidden="true"></i>
+          <span>Manage Categories</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-admin-tab="products" role="tab" aria-selected="false">
+          <i class="fa-solid fa-boxes-stacked" aria-hidden="true"></i>
+          <span>Manage Products</span>
+        </button>
+        <button type="button" class="admin-tab-btn" data-admin-tab="settings" role="tab" aria-selected="false">
+          <i class="fa-solid fa-gear" aria-hidden="true"></i>
+          <span>Settings</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: MANAGE CATEGORIES (TREE VIEW) -->
+      <div class="admin-panel-view is-active" id="tabCategoriesView">
+        <div class="admin-card">
+          <h3 class="admin-card-title">Add Main Category or Sub-Category</h3>
+          <form id="addCategoryForm" class="admin-form-row-cat">
+            <div class="form-field">
+              <label for="catNameInput" class="form-label">Category Name</label>
+              <input
+                type="text"
+                id="catNameInput"
+                class="dark-input"
+                placeholder="e.g. Cricket, Football, Dumbbells"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="catParentSelect" class="form-label">Parent Category (Optional)</label>
+              <select id="catParentSelect" class="dark-select">
+                <option value="">None (Main Category)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-white-primary" style="height:44px;">
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+              <span>Add Category</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="admin-card">
+          <h3 class="admin-card-title">Category Tree View</h3>
+          <div class="tree-container" id="categoryTreeView"></div>
+        </div>
+      </div>
+
+      <!-- TAB 2: MANAGE PRODUCTS -->
+      <div class="admin-panel-view" id="tabProductsView">
+        <div class="admin-card">
+          <h3 class="admin-card-title">Add New Product (PKR)</h3>
+          <form id="addProductForm" class="admin-form-grid">
+            <div class="form-field">
+              <label for="prodNameInput" class="form-label">Product Name</label>
+              <input
+                type="text"
+                id="prodNameInput"
+                class="dark-input"
+                placeholder="e.g. Pro Carbon Rugby Helmet"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="prodPriceInput" class="form-label">Price (in PKR)</label>
+              <input
+                type="number"
+                min="1"
+                step="1"
+                id="prodPriceInput"
+                class="dark-input"
+                placeholder="e.g. 8500"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="prodCategorySelect" class="form-label">Category</label>
+              <select id="prodCategorySelect" class="dark-select" required></select>
+            </div>
+
+            <div class="form-field">
+              <label for="prodImageInput" class="form-label">Image URL</label>
+              <input
+                type="url"
+                id="prodImageInput"
+                class="dark-input"
+                placeholder="https://images.unsplash.com/..."
+                required
+              />
+            </div>
+
+            <div class="form-field is-full">
+              <button type="submit" class="btn-white-primary" style="width:max-content;">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                <span>Add Product</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="admin-card">
+          <h3 class="admin-card-title">Products List</h3>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th>Price (PKR)</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: SETTINGS -->
+      <div class="admin-panel-view" id="tabSettingsView">
+        <div class="admin-card">
+          <h3 class="admin-card-title">Store Settings</h3>
+          <form id="settingsForm" class="admin-form-grid">
+            <div class="form-field">
+              <label for="settingWhatsappInput" class="form-label">WhatsApp Hotline Number</label>
+              <input
+                type="text"
+                id="settingWhatsappInput"
+                class="dark-input"
+                placeholder="923321460134"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="settingMarqueeInput" class="form-label">Top Marquee Text</label>
+              <input
+                type="text"
+                id="settingMarqueeInput"
+                class="dark-input"
+                required
+              />
+            </div>
+
+            <div class="form-field is-full" style="flex-direction:row;flex-wrap:wrap;gap:12px;">
+              <button type="submit" class="btn-white-primary">
+                <i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>
+                <span>Save Settings</span>
+              </button>
+              <button type="button" class="btn-delete-sm" id="resetStoreDataBtn" style="padding:12px 18px;font-size:0.85rem;">
+                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                <span>Reset Default Products &amp; Categories</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. CART DRAWER & TOAST
+       ======================================================================== -->
+  <div class="cart-backdrop" id="cartBackdrop" aria-hidden="true"></div>
+  <aside
+    class="cart-drawer"
+    id="cartDrawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Shopping Cart"
+    aria-hidden="true"
+  >
+    <div class="cart-drawer-head">
+      <h3>Your Gear Bag</h3>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="cart-items-body" id="cartItemsBody"></div>
+
+    <div class="cart-drawer-foot">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal" class="tabular-nums">Rs. 0</span>
+      </div>
+      <a
+        href="https://wa.me/923321460134"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-whatsapp"
+        id="checkoutWhatsAppBtn"
+      >
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span>Order Bag on WhatsApp</span>
+      </a>
+    </div>
+  </aside>
+
+  <div class="toast-banner" id="toastBanner" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+    <span id="toastText">Added to bag</span>
+  </div>
+
+  <!-- ========================================================================
+       9. VANILLA JAVASCRIPT (HARDCODED PRODUCTS + WHATSAPP URL ENCODING)
+       ======================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      var ADMIN_PASS = '356948127';
+      var STORAGE_KEYS = {
+        CATEGORIES: 'nouman_sheikh_categories_v2',
+        PRODUCTS: 'nouman_sheikh_products_v2',
+        SETTINGS: 'nouman_sheikh_settings_v2',
+        CART: 'nouman_sheikh_cart_v2'
+      };
+
+      var DEFAULT_SETTINGS = {
+        whatsappNumber: '923321460134',
+        marqueeText: '🔥 WELCOME TO NOUMAN SHEIKH SHOP - PREMIUM SPORTS & GAMES GEAR 🔥 FREE SHIPPING ON ALL ORDERS ABOVE R.s50 🔥'
+      };
+
+      /* Default Nested Category Tree */
+      var DEFAULT_CATEGORIES = [
+        { id: 'cat_sports', name: 'Sports', parentId: null },
+        { id: 'cat_rugby', name: 'Rugby', parentId: 'cat_sports' },
+        { id: 'cat_football', name: 'Football', parentId: 'cat_sports' },
+        { id: 'cat_gym', name: 'Gym', parentId: 'cat_sports' }
+      ];
+
+      /* Default Sports & Games Products Array (PKR Prices) */
+      var DEFAULT_PRODUCTS = [
+        {
+          id: '1',
+          name: 'Rugby Helmet',
+          price: 8500,
+          categoryId: 'cat_rugby',
+          image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-helmet-safety'
+        },
+        {
+          id: '2',
+          name: 'Rugby Shoes',
+          price: 12000,
+          categoryId: 'cat_rugby',
+          image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-shoe-prints'
+        },
+        {
+          id: '3',
+          name: 'Shoulder Pads',
+          price: 4500,
+          categoryId: 'cat_rugby',
+          image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-shield-halved'
+        },
+        {
+          id: '4',
+          name: 'Rugby T-Shirt',
+          price: 3800,
+          categoryId: 'cat_rugby',
+          image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-shirt'
+        },
+        {
+          id: '5',
+          name: 'Rugby Ball',
+          price: 5200,
+          categoryId: 'cat_rugby',
+          image: 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-football'
+        },
+        {
+          id: '6',
+          name: 'Match Football Pro',
+          price: 6500,
+          categoryId: 'cat_football',
+          image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-futbol'
+        },
+        {
+          id: '7',
+          name: 'Football Turf Boots',
+          price: 11500,
+          categoryId: 'cat_football',
+          image: 'https://images.unsplash.com/photo-1511886929837-354d827aae26?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-shoe-prints'
+        },
+        {
+          id: '8',
+          name: 'Training Gloves',
+          price: 2800,
+          categoryId: 'cat_gym',
+          image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-hand'
+        },
+        {
+          id: '9',
+          name: 'Hex Rubber Dumbbells Pair',
+          price: 9500,
+          categoryId: 'cat_gym',
+          image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-dumbbell'
+        }
+      ];
+
+      /* 4 Featured Cards for Category Grid (Jersey, Helmet, Ball, Gloves in PKR) */
+      var CATEGORY_CARDS = [
+        {
+          id: '4',
+          label: 'Jersey',
+          name: 'Rugby T-Shirt',
+          price: 3800,
+          image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-shirt'
+        },
+        {
+          id: '1',
+          label: 'Helmet',
+          name: 'Rugby Helmet',
+          price: 8500,
+          image: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-helmet-safety'
+        },
+        {
+          id: '5',
+          label: 'Ball',
+          name: 'Rugby Ball',
+          price: 5200,
+          image: 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-football'
+        },
+        {
+          id: '8',
+          label: 'Gloves',
+          name: 'Training Gloves',
+          price: 2800,
+          image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80',
+          icon: 'fa-hand'
+        }
+      ];
+
+      function loadStorage(key, fallback) {
+        try {
+          var raw = localStorage.getItem(key);
+          if (!raw) return JSON.parse(JSON.stringify(fallback));
+          return JSON.parse(raw);
+        } catch (err) {
+          return JSON.parse(JSON.stringify(fallback));
+        }
+      }
+
+      function saveStorage(key, val) {
+        try {
+          localStorage.setItem(key, JSON.stringify(val));
+        } catch (err) {}
+      }
+
+      var categories = loadStorage(STORAGE_KEYS.CATEGORIES, DEFAULT_CATEGORIES);
+      var products = loadStorage(STORAGE_KEYS.PRODUCTS, DEFAULT_PRODUCTS);
+      var settings = loadStorage(STORAGE_KEYS.SETTINGS, DEFAULT_SETTINGS);
+      var cart = loadStorage(STORAGE_KEYS.CART, []);
+
+      if (!localStorage.getItem(STORAGE_KEYS.CATEGORIES)) saveStorage(STORAGE_KEYS.CATEGORIES, categories);
+      if (!localStorage.getItem(STORAGE_KEYS.PRODUCTS)) saveStorage(STORAGE_KEYS.PRODUCTS, products);
+      if (!localStorage.getItem(STORAGE_KEYS.SETTINGS)) saveStorage(STORAGE_KEYS.SETTINGS, settings);
+
+      var activeBestSellingCategory = 'All';
+      var activeCatalogueCategory = 'All';
+      var toastTimer = null;
+
+      /* Format Price in PKR ("Rs. 8,500") */
+      function formatPKR(amount) {
+        return 'Rs. ' + Number(amount).toLocaleString('en-PK');
+      }
+
+      /* Build Properly Encoded WhatsApp Order URL in PKR */
+      function buildWhatsAppUrl(productName, price) {
+        var waNum = (settings.whatsappNumber || '923321460134').replace(/[^0-9]/g, '');
+        var priceText = formatPKR(price);
+        var message = 'Hi Nouman Sheikh, I am interested in buying ' + productName + ' for ' + priceText + '. Please provide more details.';
+        return 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(message);
+      }
+
+      function escapeHtml(str) {
+        return String(str || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      window.fallbackImg = function (img, iconClass, label) {
+        var parent = img.parentElement;
+        if (!parent) return;
+        img.remove();
+        var box = document.createElement('div');
+        box.className = 'img-fallback';
+        box.innerHTML = '<i class="fa-solid ' + iconClass + '" aria-hidden="true"></i><span>' + escapeHtml(label) + '</span>';
+        parent.appendChild(box);
+      };
+
+      function getCategoryName(catId) {
+        var found = categories.find(function (c) { return c.id === catId; });
+        return found ? found.name : 'Sports Gear';
+      }
+
+      function getCategoryPathLabel(catId) {
+        var found = categories.find(function (c) { return c.id === catId; });
+        if (!found) return 'Sports Gear';
+        if (!found.parentId) return found.name;
+        var parent = categories.find(function (p) { return p.id === found.parentId; });
+        return parent ? (parent.name + ' / ' + found.name) : found.name;
+      }
+
+      function matchesCategoryFilter(prod, filterId) {
+        if (filterId === 'All') return true;
+        if (prod.categoryId === filterId) return true;
+        var prodCat = categories.find(function (c) { return c.id === prod.categoryId; });
+        return prodCat && prodCat.parentId === filterId;
+      }
+
+      function applySettingsUI() {
+        var items = document.querySelectorAll('.marquee-item');
+        items.forEach(function (el) {
+          el.textContent = settings.marqueeText;
+        });
+        document.getElementById('settingWhatsappInput').value = settings.whatsappNumber;
+        document.getElementById('settingMarqueeInput').value = settings.marqueeText;
+      }
+
+      /* Render 2x2 Category Grid Cards (with Green WhatsApp Button on Each) */
+      function renderCategoryGrid() {
+        var grid = document.getElementById('categoryGrid');
+        grid.innerHTML = CATEGORY_CARDS.map(function (item) {
+          var waUrl = buildWhatsAppUrl(item.name, item.price);
+          return (
+            '<article class="cat-white-card">' +
+              '<div class="cat-card-img">' +
+                '<img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + '" loading="lazy" onerror="fallbackImg(this, \'' + item.icon + '\', \'' + escapeHtml(item.label) + '\')" />' +
+              '</div>' +
+              '<div class="cat-card-meta">' +
+                '<span class="cat-card-title">' + escapeHtml(item.label) + ' · ' + escapeHtml(item.name) + '</span>' +
+                '<span class="cat-card-price tabular-nums">' + formatPKR(item.price) + '</span>' +
+              '</div>' +
+              '<a href="' + waUrl + '" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="Order ' + escapeHtml(item.name) + ' on WhatsApp">' +
+                '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>' +
+                '<span>Order on WhatsApp</span>' +
+              '</a>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      /* Render Best Selling Gear Cards (MAX 5 Products on Home Page) */
+      function renderBestSellingSection() {
+        var filterBar = document.getElementById('storeFilterBar');
+        var tabsHtml = '<button type="button" class="filter-pill-btn ' + (activeBestSellingCategory === 'All' ? 'is-active' : '') + '" data-cat-filter="All">All</button>';
+        categories.forEach(function (cat) {
+          tabsHtml += '<button type="button" class="filter-pill-btn ' + (activeBestSellingCategory === cat.id ? 'is-active' : '') + '" data-cat-filter="' + cat.id + '">' + escapeHtml(cat.name) + '</button>';
+        });
+        filterBar.innerHTML = tabsHtml;
+
+        var list = products.filter(function (p) {
+          return matchesCategoryFilter(p, activeBestSellingCategory);
+        }).slice(0, 5);
+
+        var grid = document.getElementById('bestSellingGrid');
+        if (list.length === 0) {
+          grid.innerHTML = '<div style="grid-column:1/-1;padding:32px;text-align:center;color:#a3a3a3;background:#1a1a1a;border-radius:14px;">No products found in this category.</div>';
+          return;
+        }
+
+        grid.innerHTML = list.map(function (prod) {
+          var waUrl = buildWhatsAppUrl(prod.name, prod.price);
+          return (
+            '<article class="gear-product-card">' +
+              '<div class="gear-white-frame">' +
+                '<img src="' + escapeHtml(prod.image) + '" alt="' + escapeHtml(prod.name) + '" loading="lazy" onerror="fallbackImg(this, \'' + (prod.icon || 'fa-dumbbell') + '\', \'' + escapeHtml(prod.name) + '\')" />' +
+              '</div>' +
+              '<span class="gear-cat-label">' + escapeHtml(getCategoryName(prod.categoryId)) + '</span>' +
+              '<div class="gear-meta-row">' +
+                '<h3 class="gear-name">' + escapeHtml(prod.name) + '</h3>' +
+                '<span class="gear-price tabular-nums">' + formatPKR(prod.price) + '</span>' +
+              '</div>' +
+              '<div class="card-actions-row">' +
+                '<a href="' + waUrl + '" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="Order ' + escapeHtml(prod.name) + ' on WhatsApp">' +
+                  '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>' +
+                  '<span>Order on WhatsApp</span>' +
+                '</a>' +
+                '<button type="button" class="btn-save-cart-mini" data-add-cart="' + prod.id + '" title="Add to Bag" aria-label="Add ' + escapeHtml(prod.name) + ' to bag">' +
+                  '<i class="fa-solid fa-cart-plus" aria-hidden="true"></i>' +
+                '</button>' +
+              '</div>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      /* Render Clean Catalogue View (ALL Products + Dynamic Category Filter Tabs) */
+      function renderCatalogueView() {
+        var filterBar = document.getElementById('catalogueFilterBar');
+        var tabsHtml = '<button type="button" class="filter-pill-btn ' + (activeCatalogueCategory === 'All' ? 'is-active' : '') + '" data-catalogue-filter="All">All</button>';
+        categories.forEach(function (cat) {
+          tabsHtml += '<button type="button" class="filter-pill-btn ' + (activeCatalogueCategory === cat.id ? 'is-active' : '') + '" data-catalogue-filter="' + cat.id + '">' + escapeHtml(cat.name) + '</button>';
+        });
+        filterBar.innerHTML = tabsHtml;
+
+        var list = products.filter(function (p) {
+          return matchesCategoryFilter(p, activeCatalogueCategory);
+        });
+
+        var grid = document.getElementById('catalogueGrid');
+        if (list.length === 0) {
+          grid.innerHTML = '<div style="grid-column:1/-1;padding:32px;text-align:center;color:#a3a3a3;background:#1a1a1a;border-radius:14px;">No products available in this category.</div>';
+          return;
+        }
+
+        grid.innerHTML = list.map(function (prod) {
+          var waUrl = buildWhatsAppUrl(prod.name, prod.price);
+          return (
+            '<article class="gear-product-card">' +
+              '<div class="gear-white-frame">' +
+                '<img src="' + escapeHtml(prod.image) + '" alt="' + escapeHtml(prod.name) + '" loading="lazy" onerror="fallbackImg(this, \'' + (prod.icon || 'fa-dumbbell') + '\', \'' + escapeHtml(prod.name) + '\')" />' +
+              '</div>' +
+              '<div class="gear-meta-row">' +
+                '<h3 class="gear-name">' + escapeHtml(prod.name) + '</h3>' +
+                '<span class="gear-price tabular-nums">' + formatPKR(prod.price) + '</span>' +
+              '</div>' +
+              '<a href="' + waUrl + '" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="Order ' + escapeHtml(prod.name) + ' on WhatsApp">' +
+                '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>' +
+                '<span>Order on WhatsApp</span>' +
+              '</a>' +
+            '</article>'
+          );
+        }).join('');
+      }
+
+      /* ======================================================================
+         ADMIN DASHBOARD RENDERING (TREE VIEW, DROPDOWNS, PRODUCTS TABLE)
+         ====================================================================== */
+      var catParentSelect = document.getElementById('catParentSelect');
+      var prodCategorySelect = document.getElementById('prodCategorySelect');
+      var categoryTreeView = document.getElementById('categoryTreeView');
+      var adminProductsTableBody = document.getElementById('adminProductsTableBody');
+
+      function renderAdminDropdowns() {
+        var parents = categories.filter(function (c) { return !c.parentId; });
+        catParentSelect.innerHTML = '<option value="">None (Main Category)</option>' +
+          parents.map(function (p) {
+            return '<option value="' + p.id + '">' + escapeHtml(p.name) + '</option>';
+          }).join('');
+
+        var opts = '';
+        parents.forEach(function (parent) {
+          opts += '<option value="' + parent.id + '">' + escapeHtml(parent.name) + '</option>';
+          categories.filter(function (c) { return c.parentId === parent.id; }).forEach(function (child) {
+            opts += '<option value="' + child.id + '">&nbsp;&nbsp;└─ ' + escapeHtml(parent.name + ' > ' + child.name) + '</option>';
+          });
+        });
+        categories.filter(function (c) {
+          return c.parentId && !parents.some(function (p) { return p.id === c.parentId; });
+        }).forEach(function (orphan) {
+          opts += '<option value="' + orphan.id + '">' + escapeHtml(orphan.name) + '</option>';
+        });
+        prodCategorySelect.innerHTML = opts || '<option value="">Add a category first</option>';
+      }
+
+      function renderAdminCategoryTree() {
+        var parents = categories.filter(function (c) { return !c.parentId; });
+        if (categories.length === 0) {
+          categoryTreeView.innerHTML = '<p style="color:#a3a3a3;font-size:0.9rem;">No categories yet. Add a main category above.</p>';
+          return;
+        }
+
+        categoryTreeView.innerHTML = parents.map(function (parent) {
+          var children = categories.filter(function (c) { return c.parentId === parent.id; });
+          var childrenHtml = children.length
+            ? '<div class="tree-children-list">' +
+                children.map(function (child) {
+                  return (
+                    '<div class="tree-child-row">' +
+                      '<span class="tree-node-label"><span>└─ 📄</span><span>' + escapeHtml(child.name) + '</span></span>' +
+                      '<button type="button" class="btn-delete-sm" data-del-cat="' + child.id + '"><i class="fa-solid fa-trash"></i> Delete</button>' +
+                    '</div>'
+                  );
+                }).join('') +
+              '</div>'
+            : '';
+
+          return (
+            '<div class="tree-parent-block">' +
+              '<div class="tree-node-row">' +
+                '<span class="tree-node-label"><span>📁</span><span>' + escapeHtml(parent.name) + '</span></span>' +
+                '<button type="button" class="btn-delete-sm" data-del-cat="' + parent.id + '"><i class="fa-solid fa-trash"></i> Delete</button>' +
+              '</div>' +
+              childrenHtml +
+            '</div>'
+          );
+        }).join('');
+      }
+
+      function renderAdminProductsTable() {
+        if (products.length === 0) {
+          adminProductsTableBody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:#a3a3a3;padding:24px;">No products in catalog.</td></tr>';
+          return;
+        }
+        adminProductsTableBody.innerHTML = products.map(function (prod) {
+          return (
+            '<tr>' +
+              '<td><img src="' + escapeHtml(prod.image) + '" alt="' + escapeHtml(prod.name) + '" class="admin-prod-thumb" onerror="this.style.opacity=\'0.3\'" /></td>' +
+              '<td><strong>' + escapeHtml(prod.name) + '</strong></td>' +
+              '<td style="color:#a3a3a3;">' + escapeHtml(getCategoryPathLabel(prod.categoryId)) + '</td>' +
+              '<td class="tabular-nums"><strong>' + formatPKR(prod.price) + '</strong></td>' +
+              '<td><button type="button" class="btn-delete-sm" data-del-prod="' + prod.id + '"><i class="fa-solid fa-trash"></i> Delete</button></td>' +
+            '</tr>'
+          );
+        }).join('');
+      }
+
+      function refreshAll() {
+        applySettingsUI();
+        renderCategoryGrid();
+        renderBestSellingSection();
+        renderCatalogueView();
+        renderAdminDropdowns();
+        renderAdminCategoryTree();
+        renderAdminProductsTable();
+        renderCart();
+      }
+
+      /* Toggle Between Storefront Home & Clean Catalogue View */
+      var catalogueViewEl = document.getElementById('catalogueView');
+      var storefrontMainEl = document.getElementById('storefrontMain');
+
+      function setPageView(view, hashTarget) {
+        var showCatalogue = view === 'catalogue';
+        catalogueViewEl.classList.toggle('is-active', showCatalogue);
+        storefrontMainEl.classList.toggle('is-hidden', showCatalogue);
+
+        document.querySelectorAll('.nav-links .nav-link').forEach(function (link) {
+          var isTarget = (showCatalogue && link.getAttribute('href') === '#catalogue') ||
+            (!showCatalogue && link.getAttribute('href') === (hashTarget || '#home'));
+          link.classList.toggle('is-active', isTarget);
+        });
+
+        if (showCatalogue) {
+          renderCatalogueView();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (hashTarget && hashTarget !== '#home') {
+          var el = document.querySelector(hashTarget);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      /* Admin Modal & Overlay Events */
+      var adminLoginModal = document.getElementById('adminLoginModal');
+      var adminOverlay = document.getElementById('adminOverlay');
+      var adminPasswordInput = document.getElementById('adminPasswordInput');
+      var loginErrorMsg = document.getElementById('loginErrorMsg');
+
+      function openLoginModal() {
+        loginErrorMsg.classList.remove('is-visible');
+        adminPasswordInput.value = '';
+        adminLoginModal.classList.add('is-open');
+        adminLoginModal.setAttribute('aria-hidden', 'false');
+        setTimeout(function () { adminPasswordInput.focus(); }, 40);
+      }
+
+      function closeLoginModal() {
+        adminLoginModal.classList.remove('is-open');
+        adminLoginModal.setAttribute('aria-hidden', 'true');
+      }
+
+      function openAdminDashboard() {
+        refreshAll();
+        adminOverlay.classList.add('is-open');
+        adminOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeAdminDashboard() {
+        adminOverlay.classList.remove('is-open');
+        adminOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('openAdminLoginBtn').addEventListener('click', openLoginModal);
+      document.getElementById('closeLoginModalBtn').addEventListener('click', closeLoginModal);
+      adminLoginModal.addEventListener('click', function (e) {
+        if (e.target === adminLoginModal) closeLoginModal();
+      });
+
+      document.getElementById('adminLoginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (adminPasswordInput.value === ADMIN_PASS) {
+          closeLoginModal();
+          openAdminDashboard();
+          showToast('Welcome to Nouman Sheikh Admin Dashboard');
+        } else {
+          loginErrorMsg.classList.add('is-visible');
+          adminPasswordInput.focus();
+        }
+      });
+
+      document.getElementById('closeAdminOverlayBtn').addEventListener('click', closeAdminDashboard);
+
+      document.querySelectorAll('[data-admin-tab]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = btn.getAttribute('data-admin-tab');
+          document.querySelectorAll('[data-admin-tab]').forEach(function (b) {
+            var active = b === btn;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          document.getElementById('tabCategoriesView').classList.toggle('is-active', target === 'categories');
+          document.getElementById('tabProductsView').classList.toggle('is-active', target === 'products');
+          document.getElementById('tabSettingsView').classList.toggle('is-active', target === 'settings');
+        });
+      });
+
+      document.getElementById('addCategoryForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nameEl = document.getElementById('catNameInput');
+        var name = nameEl.value.trim();
+        var parentId = catParentSelect.value || null;
+        if (!name) return;
+
+        categories.push({ id: 'cat_' + Date.now(), name: name, parentId: parentId });
+        saveStorage(STORAGE_KEYS.CATEGORIES, categories);
+        nameEl.value = '';
+        refreshAll();
+        showToast('Category "' + name + '" added');
+      });
+
+      categoryTreeView.addEventListener('click', function (e) {
+        var delBtn = e.target.closest('[data-del-cat]');
+        if (!delBtn) return;
+        var catId = delBtn.getAttribute('data-del-cat');
+        categories = categories.filter(function (c) { return c.id !== catId && c.parentId !== catId; });
+        if (activeBestSellingCategory === catId) activeBestSellingCategory = 'All';
+        if (activeCatalogueCategory === catId) activeCatalogueCategory = 'All';
+        saveStorage(STORAGE_KEYS.CATEGORIES, categories);
+        refreshAll();
+        showToast('Category deleted');
+      });
+
+      document.getElementById('addProductForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var nameEl = document.getElementById('prodNameInput');
+        var priceEl = document.getElementById('prodPriceInput');
+        var imgEl = document.getElementById('prodImageInput');
+
+        var name = nameEl.value.trim();
+        var price = parseFloat(priceEl.value);
+        var categoryId = prodCategorySelect.value;
+        var image = imgEl.value.trim();
+        if (!name || isNaN(price) || !categoryId || !image) return;
+
+        products.unshift({
+          id: 'prod_' + Date.now(),
+          name: name,
+          price: price,
+          categoryId: categoryId,
+          image: image,
+          icon: 'fa-dumbbell'
+        });
+        saveStorage(STORAGE_KEYS.PRODUCTS, products);
+        e.target.reset();
+        refreshAll();
+        showToast('Product "' + name + '" added to store & catalogue');
+      });
+
+      adminProductsTableBody.addEventListener('click', function (e) {
+        var delBtn = e.target.closest('[data-del-prod]');
+        if (!delBtn) return;
+        var prodId = delBtn.getAttribute('data-del-prod');
+        products = products.filter(function (p) { return String(p.id) !== String(prodId); });
+        saveStorage(STORAGE_KEYS.PRODUCTS, products);
+        refreshAll();
+        showToast('Product deleted');
+      });
+
+      document.getElementById('settingsForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        settings.whatsappNumber = document.getElementById('settingWhatsappInput').value.trim() || '923321460134';
+        settings.marqueeText = document.getElementById('settingMarqueeInput').value.trim() || DEFAULT_SETTINGS.marqueeText;
+        saveStorage(STORAGE_KEYS.SETTINGS, settings);
+        refreshAll();
+        showToast('Store settings saved');
+      });
+
+      document.getElementById('resetStoreDataBtn').addEventListener('click', function () {
+        categories = JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+        products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+        settings = JSON.parse(JSON.stringify(DEFAULT_SETTINGS));
+        activeBestSellingCategory = 'All';
+        activeCatalogueCategory = 'All';
+        saveStorage(STORAGE_KEYS.CATEGORIES, categories);
+        saveStorage(STORAGE_KEYS.PRODUCTS, products);
+        saveStorage(STORAGE_KEYS.SETTINGS, settings);
+        refreshAll();
+        showToast('Default categories & products restored');
+      });
+
+      /* Cart Drawer Logic + Bag WhatsApp Summary */
+      var navbar = document.getElementById('siteNavbar');
+      var mobileToggle = document.getElementById('mobileNavToggle');
+      var mobileDrawer = document.getElementById('mobileNavDrawer');
+      var cartOpenBtn = document.getElementById('cartOpenBtn');
+      var cartCloseBtn = document.getElementById('cartCloseBtn');
+      var cartBackdrop = document.getElementById('cartBackdrop');
+      var cartDrawer = document.getElementById('cartDrawer');
+      var cartBadge = document.getElementById('cartBadge');
+      var cartItemsBody = document.getElementById('cartItemsBody');
+      var cartSubtotal = document.getElementById('cartSubtotal');
+      var checkoutWhatsAppBtn = document.getElementById('checkoutWhatsAppBtn');
+      var toastBanner = document.getElementById('toastBanner');
+      var toastText = document.getElementById('toastText');
+
+      function showToast(msg) {
+        toastText.textContent = msg;
+        toastBanner.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toastBanner.classList.remove('is-visible');
+        }, 2400);
+      }
+
+      function renderCart() {
+        var totalQty = cart.reduce(function (s, i) { return s + i.qty; }, 0);
+        var subtotal = cart.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
+        var waNum = (settings.whatsappNumber || '923321460134').replace(/[^0-9]/g, '');
+
+        cartBadge.textContent = totalQty;
+        cartSubtotal.textContent = formatPKR(subtotal);
+
+        if (cart.length === 0) {
+          cartItemsBody.innerHTML = '<div class="cart-empty">Your gear bag is empty. Use the green WhatsApp button on any product card to order directly, or click the cart icon to add multiple items.</div>';
+          checkoutWhatsAppBtn.href = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent('Hi Nouman Sheikh, I would like to inquire about ordering sports gear.');
+          return;
+        }
+
+        cartItemsBody.innerHTML = cart.map(function (item) {
+          return (
+            '<div class="cart-item-row">' +
+              '<div class="cart-item-thumb">' +
+                '<img src="' + escapeHtml(item.image) + '" alt="' + escapeHtml(item.name) + '" onerror="fallbackImg(this, \'fa-football\', \'Gear\')" />' +
+              '</div>' +
+              '<div>' +
+                '<div style="font-weight:700;font-size:0.92rem;">' + escapeHtml(item.name) + '</div>' +
+                '<div class="tabular-nums" style="color:#a3a3a3;font-size:0.85rem;margin-top:2px;">' + formatPKR(item.price * item.qty) + '</div>' +
+                '<div class="cart-item-controls">' +
+                  '<div class="qty-box">' +
+                    '<button type="button" data-dec="' + item.id + '" aria-label="Decrease quantity">-</button>' +
+                    '<span class="tabular-nums">' + item.qty + '</span>' +
+                    '<button type="button" data-inc="' + item.id + '" aria-label="Increase quantity">+</button>' +
+                  '</div>' +
+                  '<button type="button" class="cart-remove-link" data-remove="' + item.id + '">Remove</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>'
+          );
+        }).join('');
+
+        var lines = cart.map(function (i) {
+          return i.qty + 'x ' + i.name + ' (' + formatPKR(i.price * i.qty) + ')';
+        }).join(', ');
+        var bagMessage = 'Hi Nouman Sheikh, I am interested in buying: ' + lines + '. Total: ' + formatPKR(subtotal) + '. Please provide more details.';
+        checkoutWhatsAppBtn.href = 'https://wa.me/' + waNum + '?text=' + encodeURIComponent(bagMessage);
+      }
+
+      function addToCart(id) {
+        var prod = products.find(function (p) { return String(p.id) === String(id); });
+        if (!prod) return;
+        var existing = cart.find(function (c) { return String(c.id) === String(id); });
+        if (existing) existing.qty += 1;
+        else cart.push({ id: prod.id, name: prod.name, price: Number(prod.price), image: prod.image, qty: 1 });
+        saveStorage(STORAGE_KEYS.CART, cart);
+        renderCart();
+        showToast(prod.name + ' added to bag');
+      }
+
+      function openCart() {
+        cartDrawer.classList.add('is-open');
+        cartBackdrop.classList.add('is-open');
+        cartDrawer.setAttribute('aria-hidden', 'false');
+        setTimeout(function () { cartCloseBtn.focus(); }, 40);
+      }
+
+      function closeCart() {
+        cartDrawer.classList.remove('is-open');
+        cartBackdrop.classList.remove('is-open');
+        cartDrawer.setAttribute('aria-hidden', 'true');
+      }
+
+      /* Event Listeners */
+      window.addEventListener('scroll', function () {
+        navbar.classList.toggle('is-scrolled', window.scrollY > 12);
+      }, { passive: true });
+
+      mobileToggle.addEventListener('click', function () {
+        var open = mobileDrawer.classList.toggle('is-open');
+        mobileToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('[data-nav-view]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          var targetView = link.getAttribute('data-nav-view');
+          var href = link.getAttribute('href');
+          mobileDrawer.classList.remove('is-open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          setPageView(targetView, href);
+        });
+      });
+
+      document.getElementById('storeFilterBar').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-cat-filter]');
+        if (!btn) return;
+        activeBestSellingCategory = btn.getAttribute('data-cat-filter');
+        renderBestSellingSection();
+      });
+
+      document.getElementById('catalogueFilterBar').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-catalogue-filter]');
+        if (!btn) return;
+        activeCatalogueCategory = btn.getAttribute('data-catalogue-filter');
+        renderCatalogueView();
+      });
+
+      document.getElementById('bestSellingGrid').addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-add-cart]');
+        if (!btn) return;
+        addToCart(btn.getAttribute('data-add-cart'));
+      });
+
+      cartItemsBody.addEventListener('click', function (e) {
+        var dec = e.target.closest('[data-dec]');
+        var inc = e.target.closest('[data-inc]');
+        var rem = e.target.closest('[data-remove]');
+
+        if (dec) {
+          var id = dec.getAttribute('data-dec');
+          var idx = cart.findIndex(function (i) { return String(i.id) === String(id); });
+          if (idx > -1) {
+            if (cart[idx].qty > 1) cart[idx].qty -= 1;
+            else cart.splice(idx, 1);
+            saveStorage(STORAGE_KEYS.CART, cart);
+            renderCart();
+          }
+        } else if (inc) {
+          var idInc = inc.getAttribute('data-inc');
+          var found = cart.find(function (i) { return String(i.id) === String(idInc); });
+          if (found) {
+            found.qty += 1;
+            saveStorage(STORAGE_KEYS.CART, cart);
+            renderCart();
+          }
+        } else if (rem) {
+          var idRem = rem.getAttribute('data-remove');
+          cart = cart.filter(function (i) { return String(i.id) !== String(idRem); });
+          saveStorage(STORAGE_KEYS.CART, cart);
+          renderCart();
+        }
+      });
+
+      cartOpenBtn.addEventListener('click', openCart);
+      cartCloseBtn.addEventListener('click', closeCart);
+      cartBackdrop.addEventListener('click', closeCart);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeCart();
+          closeLoginModal();
+          closeAdminDashboard();
+        }
+      });
+
+      /* Initialize */
+      refreshAll();
+    })();
+  </script>
+</body>
+</html>

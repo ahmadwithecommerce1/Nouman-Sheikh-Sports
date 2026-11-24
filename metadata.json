@@ -1,0 +1,6 @@
+{
+  "name": "Sheikh Nouman Sports - Premium Athletic Gear & Equipment",
+  "description": "Shop professional cricket gear, match footballs, gym fitness equipment, and racket sports with direct WhatsApp ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
